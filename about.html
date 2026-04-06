@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic Design - About</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#ffffff;
+    color:#111;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background: rgba(17,17,17,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 45px; }
+.logo-text img { height: 35px; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+.menu-toggle { display: none; font-size: 26px; cursor: pointer; color: white; }
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    gap:40px;
+}
+
+/* TEXT */
+.hero-text{
+    max-width:500px;
+    animation:fadeUp 1s ease;
+}
+
+.hero-text h1{
+    font-size:60px;
+    font-weight:800;
+}
+
+.hero-text span{
+    color:#00bcd4;
+}
+
+.hero-text p{
+    margin:15px 0;
+    color:#555;
+    line-height:1.6;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#111;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00bcd4;
+}
+
+/* IMAGE */
+.hero-img img{
+    width:500px;
+    animation:float 4s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+/* SERVICES */
+.services{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.services h2{
+    font-size:32px;
+    margin-bottom:40px;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:260px;
+    padding:25px;
+    border-radius:15px;
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* PROCESS */
+.process{
+    padding:80px 8%;
+    background:#f7f7f7;
+}
+
+.steps{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.step{
+    flex:1;
+    min-width:200px;
+    padding:20px;
+    border-left:3px solid #00bcd4;
+}
+
+/* CTA */
+.cta{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.cta h2{
+    font-size:30px;
+}
+
+.cta a{
+    margin-top:15px;
+    display:inline-block;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:80px;
+    }
+
+    .hero-text h1{
+        font-size:36px;
+    }
+
+    .hero-img img{
+        width:280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="LOGO/logo.png">
+        <div class="logo-text">
+            <img src="LOGO/logo-text.png">
+        </div>
+    </div>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sarvice.html">Services</a></li>
+         
+            <li><a href="contect.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Creative <span>Graphic Design</span></h1>
+        <p>
+            We craft modern visuals that elevate your brand identity.  
+            From logos to UI design, we create designs that truly connect.
+        </p>
+        <a href="logo.html" class="btn">Explore Work</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="LOGO/vector.jpg" alt="design">
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+    <h2 style="text-align:center; margin-bottom:40px;">Our Process</h2>
+
+    <div class="steps">
+        <div class="step">
+            <h3>01 Research</h3>
+            <p>Understanding your brand & audience</p>
+        </div>
+
+        <div class="step">
+            <h3>02 Design</h3>
+            <p>Creating modern and unique visuals</p>
+        </div>
+
+        <div class="step">
+            <h3>03 Deliver</h3>
+            <p>Final polished output</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Let’s Create Something Amazing</h2>
+    <a href="contect.html" class="btn">Contect Now</a>
+</section>
+
+</body>
+</html>
