@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Unique Design</title>
+
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: #ffffff;
+    color: #111;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background: rgba(17,17,17,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 45px; }
+.logo-text img { height: 35px; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+.menu-toggle { display: none; font-size: 26px; cursor: pointer; color: white; }
+
+/* HOME */
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(120deg, #fdfbfb, #ebedee);
+}
+
+.slider {
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    animation: fade 1s ease;
+}
+
+.slide.active { display: block; }
+
+.slide h1 {
+    font-size: 42px;
+    color: #111;
+}
+
+.slide p {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+    background: #00bcd4;
+}
+
+.prev { left: -20px; }
+.next { right: -20px; }
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);} 
+    to {opacity: 1; transform: translateY(0);} 
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#about { background: #fafafa; }
+#services { background: #ffffff; }
+#portfolio { background: #fafafa; }
+#contact { background: #111; color: #fff; }
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .slide h1 { font-size: 26px; }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        background: #111;
+        padding: 15px;
+    }
+
+    nav ul.show { display: flex; }
+    .menu-toggle { display: block; }
+}
+
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 50px 20px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="LOGO/logo.png">
+        <div class="logo-text">
+            <img src="LOGO/logo-text.png">
+        </div>
+    </div>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="sarvice.html">Services</a></li>
+            <li><a href="contect.html">Contect</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+
+<section id="home">
+    <div class="slider">
+        <div class="slide active">
+            <h1>Design That Feels Different ✨</h1>
+            <p>Modern • Clean • Unique</p>
+        </div>
+        <div class="slide">
+            <h1>Creative Branding</h1>
+            <p>Make your identity unforgettable</p>
+        </div>
+        <div class="slide">
+            <h1>UI/UX Experience</h1>
+            <p>Design that users love</p>
+        </div>
+        <button class="prev" onclick="prevSlide()">❮</button>
+        <button class="next" onclick="nextSlide()">❯</button>
+    </div>
+</section>
+
+<section id="about.html">
+    <h1>About Us</h1>
+    <p>We craft unique digital experiences with modern design.</p>
+</section>
+
+<section id="service">
+    <h1>Our Services</h1>
+    <div class="cards">
+        <div class="card">Logo Design</div>
+        <div class="card">Poster Design</div>
+        <div class="card">UI/UX Design</div>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-box">
+            <div class="logo-text">
+            <img src="LOGO/logo-text.png">
+        </div><br><br>
+            <p>We create modern, clean and impactful designs that help brands grow and stand out.</p>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-box">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Logo Design</a></li>
+                <li><a href="#">Brand Identity</a></li>
+                <li><a href="#">UI/UX Design</a></li>
+                <li><a href="#">Poster Design</a></li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Rajkot, India</p>
+            <p>📞 +91 9100009844</p>
+            <p>📧 rdeesgraphichub.rajkot@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Creative Studio | All Rights Reserved
+    </div>
+</footer>
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) slide.classList.add("active");
+    });
+}
+
+function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}
+
+function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+}
+
+setInterval(nextSlide, 3000);
+</script>
+
+</body>
+</html>
