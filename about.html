@@ -45,7 +45,6 @@ nav ul {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    position: relative;
     transition: 0.3s;
 }
 
@@ -53,7 +52,13 @@ nav ul li a:hover {
     color: #00bcd4;
 }
 
-.menu-toggle { display: none; font-size: 26px; cursor: pointer; color: white; }
+/* BURGER ICON */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
 
 /* HERO */
 .hero{
@@ -65,7 +70,6 @@ nav ul li a:hover {
     gap:40px;
 }
 
-/* TEXT */
 .hero-text{
     max-width:500px;
     animation:fadeUp 1s ease;
@@ -86,7 +90,6 @@ nav ul li a:hover {
     line-height:1.6;
 }
 
-/* BUTTON */
 .btn{
     display:inline-block;
     padding:12px 28px;
@@ -101,49 +104,14 @@ nav ul li a:hover {
     background:#00bcd4;
 }
 
-/* IMAGE */
 .hero-img img{
     width:500px;
     animation:float 4s ease-in-out infinite;
 }
 
-/* FLOAT ANIMATION */
 @keyframes float{
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-15px);}
-}
-
-/* SERVICES */
-.services{
-    padding:80px 8%;
-    text-align:center;
-}
-
-.services h2{
-    font-size:32px;
-    margin-bottom:40px;
-}
-
-/* CARDS */
-.cards{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
-}
-
-.card{
-    width:260px;
-    padding:25px;
-    border-radius:15px;
-    background:#fff;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 /* PROCESS */
@@ -187,8 +155,9 @@ nav ul li a:hover {
     to{opacity:1; transform:translateY(0);}
 }
 
-/* MOBILE */
+/* 🔥 MOBILE NAVBAR */
 @media(max-width:768px){
+
     .hero{
         flex-direction:column;
         text-align:center;
@@ -201,6 +170,26 @@ nav ul li a:hover {
 
     .hero-img img{
         width:280px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        background: #111;
+        padding: 15px;
+        border-radius: 10px;
+        width: 200px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 }
 </style>
@@ -221,16 +210,16 @@ nav ul li a:hover {
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="sarvice.html">Services</a></li>
-         
             <li><a href="contect.html">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- BURGER -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
+
 <!-- HERO -->
 <section class="hero">
-
     <div class="hero-text">
         <h1>Creative <span>Graphic Design</span></h1>
         <p>
@@ -243,9 +232,7 @@ nav ul li a:hover {
     <div class="hero-img">
         <img src="LOGO/vector.jpg" alt="design">
     </div>
-
 </section>
-
 
 <!-- PROCESS -->
 <section class="process">
@@ -274,6 +261,13 @@ nav ul li a:hover {
     <h2>Let’s Create Something Amazing</h2>
     <a href="contect.html" class="btn">Contect Now</a>
 </section>
+
+<!-- JS -->
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
